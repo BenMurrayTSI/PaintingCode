@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         /*
-        assuming standard rectangular room (with all doors and windows the same dimensions),
+        Assuming standard rectangular room with all doors and windows the same dimensions,
         and that the painter is painting all the walls, but not window frames, doors or the ceiling.
         */
         System.out.println("\nThis program assumes you want to paint all the walls of a rectangular room, and that you arent painting windows or doors.");
