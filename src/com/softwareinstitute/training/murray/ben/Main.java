@@ -83,6 +83,11 @@ public class Main {
         System.out.println("Number of cans needed with 10% extra paint " + cans10 + ".");
         System.out.println("Price is £" + String.format("%.2f", price10) + ".");
 
+        System.out.print("\nDid you enjoy this service? (1 for yes, 0 for no): ");
+        int enjoy = roomstuff.nextInt();
+        String reply = (enjoy == 1) ? "Good to hear!" : "That's a shame...";
+        System.out.println(reply);
+
         /*
         My room
 
