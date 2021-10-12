@@ -65,11 +65,11 @@ public class Main {
         double price = cans*canprice;
         double price10 = cans10*canprice;
 
-        System.out.println("\nTotal wall area is " + paintingarea + " meters squared.");
-        System.out.println("\nPaint needed is " + litres + " litres.");
+        System.out.println("\nTotal wall area is " + String.format("%.2f", paintingarea) + " meters squared.");
+        System.out.println("\nPaint needed is " + String.format("%.2f", litres) + " litres.");
         System.out.println("Number of cans needed is " + cans + ".");
         System.out.println("Price is £" + String.format("%.2f", price) + ".");
-        System.out.println("\nPaint needed with 10% extra paint is " + litres10 + " litres.");
+        System.out.println("\nPaint needed with 10% extra paint is " + String.format("%.2f", litres10) + " litres.");
         System.out.println("Number of cans needed with 10% extra paint " + cans10 + ".");
         System.out.println("Price is £" + String.format("%.2f", price10) + ".");
 
@@ -91,12 +91,14 @@ public class Main {
         coats              2
 
         wall area          28.59
-        cans               2
-        price              21.98
 
-        wall area 10       28.59
-        cans 10            2
-        price 10           21.98
+        litres             5.72
+        cans               3
+        price              32.97
+
+        litres 10          6.29
+        cans 10            3
+        price 10           32.97
 
         woo
          */
