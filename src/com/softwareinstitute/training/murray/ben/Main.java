@@ -10,7 +10,7 @@ public class Main {
         and that the painter is painting all the walls (and ceiling) surface area,
         but not window frames or doors.
         */
-        System.out.println("\n----------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("\n-------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("This program assumes you want to paint all the walls of a rectangular room, and that you arent painting window frames or doors.");
         System.out.println("\nPlease only enter positive numbers, and only to at most 2 decimal places.");
 
@@ -109,16 +109,17 @@ public class Main {
         System.out.print("What do you rate this service (1 (Awful) to 5 (Awesome)): ");
         int rating = roomstuff.nextInt();
         String reply2 = switch (rating) {
-            case 1 -> "You gave a rating of 1 (Awful).\n";
-            case 2 -> "You gave a rating of 2 (Bad).\n";
-            case 3 -> "You gave a rating of 3 (Whatever).\n";
-            case 4 -> "You gave a rating of 4 (Good).\n";
-            case 5 -> "You gave a rating of 5 (Awesome).\n";
+            case 1 -> "You gave a rating of 1 (Awful).";
+            case 2 -> "You gave a rating of 2 (Bad).";
+            case 3 -> "You gave a rating of 3 (Whatever).";
+            case 4 -> "You gave a rating of 4 (Good).";
+            case 5 -> "You gave a rating of 5 (Awesome).";
             default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5 (Awesome).";
         };
         System.out.println(reply2);
 
         System.out.println("\nEND");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
 
         /*
         My room
