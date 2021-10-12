@@ -10,12 +10,13 @@ public class Main {
         and that the painter is painting all the walls (and ceiling) surface area,
         but not window frames or doors.
         */
+        System.out.println("\n----------------------------------------------------------------------------------------------------------------------------");
         System.out.println("\nThis program assumes you want to paint all the walls of a rectangular room, and that you arent painting windows or doors.");
-        System.out.println("\nPlease only enter positive numbers, and only to at most 2 decimal places.\n");
+        System.out.println("\nPlease only enter positive numbers, and only to at most 2 decimal places.");
 
         Scanner roomstuff = new Scanner(System.in);  // Create a Scanner object
 
-        System.out.print("Enter room length (metres): ");
+        System.out.print("\nEnter room length (metres): ");
         double rooml = roomstuff.nextDouble();  // Read user input
         System.out.print("Enter room width (metres): ");
         double roomw = roomstuff.nextDouble();
@@ -25,14 +26,14 @@ public class Main {
         double totalwallarea = 2*rooml*roomh + 2*roomw*roomh;
         double ceilingarea = rooml*roomw;
 
-        System.out.print("Do you want to paint the ceiling? (1 for yes, 0 for no): ");
+        System.out.print("\nDo you want to paint the ceiling? (1 for yes, 0 for no): ");
         byte ceiling = roomstuff.nextByte();
         if (!((ceiling == 0) || (ceiling == 1))) {
             System.out.println("Error: 0 or 1 not entered. Assuming ceiling not being painted.");
             ceiling = 0;
         }
 
-        System.out.print("Enter number of doors: ");
+        System.out.print("\nEnter number of doors: ");
         double doors = roomstuff.nextDouble();
         System.out.print("Enter door width (metres): ");
         double doorw = roomstuff.nextDouble();
@@ -41,7 +42,7 @@ public class Main {
 
         double doorarea = doors*doorw*doorh;
 
-        System.out.print("Enter numbers of windows: ");
+        System.out.print("\nEnter numbers of windows: ");
         double windows = roomstuff.nextDouble();
         System.out.print("Enter window width (metres): ");
         double windoww = roomstuff.nextDouble();
@@ -50,11 +51,11 @@ public class Main {
 
         double windowarea = windows*windoww*windowh;
         if (doorarea + windowarea > totalwallarea) {
-            System.out.println("\nError: Door and window area greater than wall area. Try again.\n");
+            System.out.println("\nError: Door and window area greater than wall area. Try again.");
             Main.main(args);
         }
 
-        System.out.print("Enter amount of paint in a can (litres): ");
+        System.out.print("\nEnter amount of paint in a can (litres): ");
         double canvolume = roomstuff.nextDouble();
         System.out.print("Enter square meter coverage per litre of paint (10 is average): ");
         double coverage = roomstuff.nextDouble();
