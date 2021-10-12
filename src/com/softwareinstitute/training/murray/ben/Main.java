@@ -75,7 +75,7 @@ public class Main {
 
         //i think gareth said an easy way to get 2 decimal places using floats or something but dont remember
 
-        System.out.println("\nTotal wall area is " + String.format("%.2f", paintingarea) + " meters squared.");
+        System.out.println("\nTotal area to paint is " + String.format("%.2f", paintingarea) + " meters squared.");
         System.out.println("\nPaint needed is " + String.format("%.2f", litres) + " litres.");
         System.out.println("Number of cans needed is " + cans + ".");
         System.out.println("Price is £" + String.format("%.2f", price) + ".");
@@ -101,7 +101,7 @@ public class Main {
         can price          10.99
         coats              2
 
-        wall area          28.59
+        painting area      28.59
 
         litres             5.72
         cans               3
