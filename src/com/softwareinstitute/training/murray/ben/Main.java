@@ -83,10 +83,22 @@ public class Main {
 
         System.out.print("\nWould you use this service again? (1 for yes, 0 for no): ");
         int reuse = roomstuff.nextInt();
-        String reply1 = (reuse == 1) ? "Good to hear!" : "That's a shame...";
+        String reply1 = (reuse == 1) ? "Good to hear!\n" : "That's a shame...\n";
         System.out.println(reply1);
 
-        System.out.print("\nWhat do you rate this service (1 (Awful) to 5 (Awesome)): ");
+        while (reuse == 0) {
+            System.out.print("Are you sure? (1 for yes, 0 for no): ");
+            int annoying = roomstuff.nextInt();
+
+            if (annoying == 0){
+                System.out.print("\nWould you use this service again? (1 for yes, 0 for no): ");
+                reuse = roomstuff.nextInt();
+                reply1 = (reuse == 1) ? "Good to hear!\n" : "That's a shame...\n";
+                System.out.println(reply1);
+            }
+        }
+
+        System.out.print("What do you rate this service (1 (Awful) to 5 (Awesome)): ");
         int rating = roomstuff.nextInt();
         String reply2 = switch (rating) {
             case 1 -> "You gave a rating of 1 (Awful).";
@@ -97,6 +109,11 @@ public class Main {
             default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5.";
         };
         System.out.println(reply2);
+
+        for (int i = 0; i < 10; i++){
+            System.out.println(10-i);
+        }
+        System.out.println("\nEND");
 
         /*
         My room
