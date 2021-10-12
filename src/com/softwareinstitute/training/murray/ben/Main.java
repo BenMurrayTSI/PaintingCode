@@ -92,6 +92,8 @@ public class Main {
         wall area 10       28.59
         cans 10            2
         price 10           21.98
+        
+        woo
          */
     }
 }
