@@ -57,7 +57,7 @@ public class Main {
 
         System.out.print("\nEnter amount of paint in a can (litres): ");
         double canvolume = roomstuff.nextDouble();
-        System.out.print("Enter square meter coverage per litre of paint (10 is average): ");
+        System.out.print("Enter square metre coverage per litre of paint (10 is average): ");
         double coverage = roomstuff.nextDouble();
         System.out.print("Enter price of a can: £");
         double canprice = roomstuff.nextDouble();
@@ -74,7 +74,7 @@ public class Main {
 
         //I think gareth said an easy way to get 2 decimal places using floats or something but dont remember
 
-        System.out.println("\nTotal area to paint is " + String.format("%.2f", paintingarea) + " meters squared.");
+        System.out.println("\nTotal area to paint is " + String.format("%.2f", paintingarea) + " metres squared.");
         System.out.println("\nPaint needed is " + String.format("%.2f", litres) + " litres.");
         System.out.println("Number of cans needed is " + cans + ".");
         System.out.println("Price is £" + String.format("%.2f", price) + ".");
@@ -107,7 +107,7 @@ public class Main {
             case 3 -> "You gave a rating of 3 (Whatever).\n";
             case 4 -> "You gave a rating of 4 (Good).\n";
             case 5 -> "You gave a rating of 5 (Awesome).\n";
-            default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5.\n";
+            default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5 (Awesome).\n";
         };
         System.out.println(reply2);
 
