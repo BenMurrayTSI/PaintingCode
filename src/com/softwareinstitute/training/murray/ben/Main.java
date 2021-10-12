@@ -83,7 +83,7 @@ public class Main {
 
         System.out.print("\nWould you use this service again? (1 for yes, 0 for no): ");
         int reuse = roomstuff.nextInt();
-        String reply1 = (reuse == 1) ? "Good to hear!" : "That's a shame...\n";
+        String reply1 = (reuse == 1) ? "Good to hear!" : "That's a shame...";
         System.out.println(reply1);
 
         System.out.print("\nWhat do you rate this service (1 (Awful) to 5 (Awesome)): ");
