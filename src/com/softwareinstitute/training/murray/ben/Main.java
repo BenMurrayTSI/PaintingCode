@@ -11,7 +11,7 @@ public class Main {
         but not window frames or doors.
         */
         System.out.println("\n----------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("\nThis program assumes you want to paint all the walls of a rectangular room, and that you arent painting windows or doors.");
+        System.out.println("This program assumes you want to paint all the walls of a rectangular room, and that you arent painting window frames or doors.");
         System.out.println("\nPlease only enter positive numbers, and only to at most 2 decimal places.");
 
         Scanner roomstuff = new Scanner(System.in);  // Create a Scanner object
@@ -74,6 +74,13 @@ public class Main {
 
         //I think gareth said an easy way to get 2 decimal places using floats or something but dont remember
 
+        System.out.println();
+
+        for (int i = 0; i < 10; i++){
+            System.out.println(10-i);
+        }
+        System.out.println("\nTA-DAH!");
+
         System.out.println("\nTotal area to paint is " + String.format("%.2f", paintingarea) + " metres squared.");
         System.out.println("\nPaint needed is " + String.format("%.2f", litres) + " litres.");
         System.out.println("Number of cans needed is " + cans + ".");
@@ -107,13 +114,10 @@ public class Main {
             case 3 -> "You gave a rating of 3 (Whatever).\n";
             case 4 -> "You gave a rating of 4 (Good).\n";
             case 5 -> "You gave a rating of 5 (Awesome).\n";
-            default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5 (Awesome).\n";
+            default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5 (Awesome).";
         };
         System.out.println(reply2);
 
-        for (int i = 0; i < 10; i++){
-            System.out.println(10-i);
-        }
         System.out.println("\nEND");
 
         /*
