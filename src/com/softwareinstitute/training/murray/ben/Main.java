@@ -10,7 +10,7 @@ public class Main {
         assuming standard rectangular room (with all doors and windows the same dimensions),
         and that the painter is painting all the walls, but not window frames, doors or the ceiling.
         */
-        System.out.println("\nThis program assumes you want to paint all the walls of a rectangular room, and that you arent painting windows, doors or the ceiling.");
+        System.out.println("\nThis program assumes you want to paint all the walls of a rectangular room, and that you arent painting windows or doors.");
 
         System.out.println("\nPlease only enter positive numbers, and only to at most 2 decimal places.\n");
 
@@ -24,6 +24,14 @@ public class Main {
         double roomh = roomstuff.nextDouble();
 
         double totalwallarea = 2*rooml*roomh + 2*roomw*roomh;
+        double ceilingarea = rooml*roomw;
+
+        System.out.print("Do you want to paint the ceiling? (1 for yes, 0 for no): ");
+        byte ceiling = roomstuff.nextByte();
+        if (!((ceiling == 0) || (ceiling == 1))) {
+            System.out.println("Error: 0 or 1 not entered. Assuming ceiling not being painted.");
+            ceiling = 0;
+        }
 
         System.out.print("Enter number of doors: ");
         double doors = roomstuff.nextDouble();
@@ -43,7 +51,7 @@ public class Main {
 
         double windowarea = windows*windoww*windowh;
         if (doorarea + windowarea > totalwallarea) {
-            System.out.println("\nError, door and window area greater than wall area. Try again.\n");
+            System.out.println("\nError: Door and window area greater than wall area. Try again.\n");
             Main.main(args);
         }
 
@@ -57,7 +65,7 @@ public class Main {
         double coats = roomstuff.nextDouble();
 
 
-        double paintingarea = totalwallarea - (windowarea + doorarea);
+        double paintingarea = totalwallarea + ceiling*ceilingarea - (windowarea + doorarea);
         double litres = (paintingarea/coverage)*coats;
         double litres10 = (paintingarea/coverage*1.1)*coats;
         int cans = (int) Math.ceil(litres/canvolume);
@@ -81,6 +89,7 @@ public class Main {
         room length        2.5
         room width         3.8
         room height        2.5
+        ceiling            0
         number of doors    1
         door width         0.7
         door height        2.1
