@@ -94,10 +94,10 @@ public class Main {
             case 3 -> "You gave a rating of 3 (Whatever).";
             case 4 -> "You gave a rating of 4 (Good).";
             case 5 -> "You gave a rating of 5 (Awesome).";
-            default -> "Error: You didn't enter a number from 1 to 5, assuming you meant 5.";
+            default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5.";
         };
         System.out.println(reply2);
-        
+
         /*
         My room
 
