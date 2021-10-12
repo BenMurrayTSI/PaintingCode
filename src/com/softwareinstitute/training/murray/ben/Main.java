@@ -83,10 +83,25 @@ public class Main {
         System.out.println("Number of cans needed with 10% extra paint " + cans10 + ".");
         System.out.println("Price is £" + String.format("%.2f", price10) + ".");
 
-        System.out.print("\nDid you enjoy this service? (1 for yes, 0 for no): ");
-        int enjoy = roomstuff.nextInt();
-        String reply = (enjoy == 1) ? "Good to hear!" : "That's a shame...";
-        System.out.println(reply);
+        System.out.print("\nWould you use this service again? (1 for yes, 0 for no): ");
+        int reuse = roomstuff.nextInt();
+        String reply1 = (reuse == 1) ? "Good to hear!" : "That's a shame...\n";
+        System.out.println(reply1);
+
+        System.out.print("\nWhat do you rate this service (1 (Awful) to 5 (Awesome)): ");
+        int rating = roomstuff.nextInt();
+        String reply2 = switch (rating) {
+            case 1 -> "You gave a rating of 1 (Awful).";
+            case 2 -> "You gave a rating of 2 (Bad).";
+            case 3 -> "You gave a rating of 3 (Whatever).";
+            case 4 -> "You gave a rating of 4 (Good).";
+            case 5 -> "You gave a rating of 5 (Awesome).";
+            default -> "Error: You didn't enter a number from 1 to 5, assuming you meant 5.";
+        };
+        System.out.println(reply2);
+
+
+
 
         /*
         My room
