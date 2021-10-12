@@ -5,13 +5,12 @@ import java.util.Scanner;  // Import the Scanner class
 public class Main {
 
     public static void main(String[] args) {
-
         /*
         Assuming standard rectangular room with all doors and windows the same dimensions,
-        and that the painter is painting all the walls, but not window frames, doors or the ceiling.
+        and that the painter is painting all the walls (and ceiling) surface area,
+        but not window frames or doors.
         */
         System.out.println("\nThis program assumes you want to paint all the walls of a rectangular room, and that you arent painting windows or doors.");
-
         System.out.println("\nPlease only enter positive numbers, and only to at most 2 decimal places.\n");
 
         Scanner roomstuff = new Scanner(System.in);  // Create a Scanner object
@@ -64,7 +63,6 @@ public class Main {
         System.out.print("Enter number of coats of paint: ");
         double coats = roomstuff.nextDouble();
 
-
         double paintingarea = totalwallarea + ceiling*ceilingarea - (windowarea + doorarea);
         double litres = (paintingarea/coverage)*coats;
         double litres10 = (paintingarea/coverage*1.1)*coats;
@@ -73,7 +71,7 @@ public class Main {
         double price = cans*canprice;
         double price10 = cans10*canprice;
 
-        //i think gareth said an easy way to get 2 decimal places using floats or something but dont remember
+        //I think gareth said an easy way to get 2 decimal places using floats or something but dont remember
 
         System.out.println("\nTotal area to paint is " + String.format("%.2f", paintingarea) + " meters squared.");
         System.out.println("\nPaint needed is " + String.format("%.2f", litres) + " litres.");
@@ -99,10 +97,7 @@ public class Main {
             default -> "Error: You didn't enter a number from 1 to 5, assuming you meant 5.";
         };
         System.out.println(reply2);
-
-
-
-
+        
         /*
         My room
 
