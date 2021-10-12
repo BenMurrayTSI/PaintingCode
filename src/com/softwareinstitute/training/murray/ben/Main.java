@@ -10,6 +10,7 @@ public class Main {
         assuming standard rectangular room (with all doors and windows the same dimensions),
         and that the painter is painting all the walls, but not window frames, doors or the ceiling.
         */
+        System.out.println("\nThis program assumes you want to paint all the walls of a rectangular room, and that you arent painting windows, doors or the ceiling.");
 
         System.out.println("\nPlease only enter positive numbers, and only to at most 2 decimal places.\n");
 
@@ -52,10 +53,13 @@ public class Main {
         double coverage = roomstuff.nextDouble();
         System.out.print("Enter price of a can: £");
         double canprice = roomstuff.nextDouble();
+        System.out.print("Enter number of coats of paint: ");
+        double coats = roomstuff.nextDouble();
+
 
         double paintingarea = totalwallarea - (windowarea + doorarea);
-        double litres = paintingarea/coverage;
-        double litres10 = paintingarea/coverage*1.1;
+        double litres = (paintingarea/coverage)*coats;
+        double litres10 = (paintingarea/coverage*1.1)*coats;
         int cans = (int) Math.ceil(litres/canvolume);
         int cans10 = (int) Math.ceil(litres10/canvolume);
         double price = cans*canprice;
@@ -84,6 +88,7 @@ public class Main {
         can volume         2.5
         litre coverage     10
         can price          10.99
+        coats              2
 
         wall area          28.59
         cans               2
@@ -92,7 +97,7 @@ public class Main {
         wall area 10       28.59
         cans 10            2
         price 10           21.98
-        
+
         woo
          */
     }
