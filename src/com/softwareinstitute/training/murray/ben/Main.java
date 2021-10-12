@@ -65,6 +65,8 @@ public class Main {
         double price = cans*canprice;
         double price10 = cans10*canprice;
 
+        //i think gareth said an easy way to get 2 decimal places using floats or something but dont remember
+
         System.out.println("\nTotal wall area is " + String.format("%.2f", paintingarea) + " meters squared.");
         System.out.println("\nPaint needed is " + String.format("%.2f", litres) + " litres.");
         System.out.println("Number of cans needed is " + cans + ".");
