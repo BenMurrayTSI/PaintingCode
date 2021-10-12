@@ -101,12 +101,12 @@ public class Main {
         System.out.print("What do you rate this service (1 (Awful) to 5 (Awesome)): ");
         int rating = roomstuff.nextInt();
         String reply2 = switch (rating) {
-            case 1 -> "You gave a rating of 1 (Awful).";
-            case 2 -> "You gave a rating of 2 (Bad).";
-            case 3 -> "You gave a rating of 3 (Whatever).";
-            case 4 -> "You gave a rating of 4 (Good).";
-            case 5 -> "You gave a rating of 5 (Awesome).";
-            default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5.";
+            case 1 -> "You gave a rating of 1 (Awful).\n";
+            case 2 -> "You gave a rating of 2 (Bad).\n";
+            case 3 -> "You gave a rating of 3 (Whatever).\n";
+            case 4 -> "You gave a rating of 4 (Good).\n";
+            case 5 -> "You gave a rating of 5 (Awesome).\n";
+            default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5.\n";
         };
         System.out.println(reply2);
 
