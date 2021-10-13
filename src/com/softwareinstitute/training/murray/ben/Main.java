@@ -93,8 +93,6 @@ public class Main {
 
         } while (!(sure == 1));
 
-
-
         System.out.print("\nEnter amount of paint in a can (litres): ");
         double canvolume = roomstuff.nextDouble();
         System.out.print("Enter square metre coverage per litre of paint (10 is average): ");
@@ -151,14 +149,14 @@ public class Main {
             System.out.println("Paint needed for the walls with 10% extra is " + String.format("%.2f", walllitres10) + " litres of " + colours[wallchoice] + " paint.");
             System.out.println("Paint needed for the ceiling with 10% extra is " + String.format("%.2f", ceillitres10) + " litres of " + colours[ceilchoice] + " paint.");
         }
-
         if (ceiling == 0) {
-            System.out.println("\nNumber of cans needed with 10% extra paint is " + cans10 + ".");
+            System.out.println("Number of cans needed with 10% extra paint is " + cans10 + ".");
         }else {
             System.out.println("Number of cans needed for the walls with 10% extra paint is " + wallcans10 + ".");
             System.out.println("Number of cans needed for the ceiling with 10% extra paint is " + ceilcans10 + ".");
         }
         System.out.println("\nPrice is £" + String.format("%.2f", price) + ".");
+        System.out.println("Price for 10% extra paint is £" + String.format("%.2f", price10) + ".");
 
         System.out.print("\nWould you use this service again? (1 for yes, 0 for no): ");
         int reuse = roomstuff.nextInt();
@@ -198,27 +196,20 @@ public class Main {
         room length        2.5
         room width         3.8
         room height        2.5
-        ceiling            0
+        ceiling            1
         number of doors    1
         door width         0.7
         door height        2.1
         number of windows  1
         window width       1.2
         window height      1.2
+        colour wall        2
+        colour ceiling     0
+        sure               1
         can volume         2.5
         litre coverage     10
         can price          10.99
         coats              2
-
-        painting area      28.59
-
-        litres             5.72
-        cans               3
-        price              32.97
-
-        litres 10          6.29
-        cans 10            3
-        price 10           32.97
 
         woohoo
          */
