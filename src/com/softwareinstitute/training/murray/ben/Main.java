@@ -29,7 +29,7 @@ public class Main {
         System.out.print("\nDo you want to paint the ceiling? (1 for yes, 0 for no): ");
         byte ceiling = roomstuff.nextByte();
         if (!((ceiling == 0) || (ceiling == 1))) {
-            System.out.println("Error: 0 or 1 not entered. Assuming ceiling not being painted.");
+            System.out.println("Error: Valid number not entered. Assuming ceiling not being painted.");
             ceiling = 0;
         }
 
@@ -55,6 +55,46 @@ public class Main {
             Main.main(args);
         }
 
+        int sure = 0;
+        int ceilchoice = 0;
+        int wallchoice = 0;
+        String[] colours = {"white", "red", "blue", "green"};
+        do {
+            for (int i = 0; i < colours.length; i++) {
+                System.out.print("\nEnter " + i + " for " + colours[i] + ".");
+            }
+            System.out.print("\n\nWhat colour paint do you want for the walls from the options above?: ");
+            wallchoice = roomstuff.nextInt();
+
+            if (!((wallchoice == 0) || (wallchoice == 1) || (wallchoice == 2) || (wallchoice == 3))) {
+                System.out.println("Error: Valid number not entered. Assuming you want white paint for the walls.");
+                wallchoice = 0;
+            }
+
+            if (ceiling == 1) {
+                for (int i = 0; i < colours.length; i++) {
+                    System.out.print("\nEnter " + i + " for " + colours[i] + ".");
+                }
+                System.out.print("\n\nWhat colour paint do you want for the ceiling from the options above?: ");
+                ceilchoice = roomstuff.nextInt();
+
+                if (!((ceilchoice == 0) || (ceilchoice == 1) || (ceilchoice == 2) || (ceilchoice == 3))) {
+                    System.out.println("Error: Valid number not entered. Assuming you want white paint for the walls.");
+                    ceilchoice = 0;
+                }
+            }
+
+            System.out.print("\nAre you sure you want " + colours[wallchoice] + " paint for the walls");
+            if (ceiling == 1) {
+                System.out.print(", and " + colours[ceilchoice] + " paint for the ceiling");
+            }
+            System.out.print("? (1 for yes, 0 for no): ");
+            sure = roomstuff.nextInt();
+
+        } while (!(sure == 1));
+
+
+
         System.out.print("\nEnter amount of paint in a can (litres): ");
         double canvolume = roomstuff.nextDouble();
         System.out.print("Enter square metre coverage per litre of paint (10 is average): ");
@@ -64,13 +104,22 @@ public class Main {
         System.out.print("Enter number of coats of paint: ");
         double coats = roomstuff.nextDouble();
 
-        double paintingarea = totalwallarea + ceiling*ceilingarea - (windowarea + doorarea);
+        double wallpaintarea = totalwallarea - (windowarea + doorarea);
+        double paintingarea = wallpaintarea + ceiling*ceilingarea;
         double litres = (paintingarea/coverage)*coats;
+        double walllitres = (wallpaintarea/coverage)*coats;
+        double ceillitres = (ceilingarea/coverage)*coats;
         double litres10 = (paintingarea/coverage*1.1)*coats;
+        double walllitres10 = (wallpaintarea/coverage*1.1)*coats;
+        double ceillitres10 = (ceilingarea/coverage*1.1)*coats;
         int cans = (int) Math.ceil(litres/canvolume);
+        int wallcans = (int) Math.ceil(walllitres/canvolume);
+        int ceilcans = (int) Math.ceil(ceillitres/canvolume);
         int cans10 = (int) Math.ceil(litres10/canvolume);
-        double price = cans*canprice;
-        double price10 = cans10*canprice;
+        int wallcans10 = (int) Math.ceil(walllitres10/canvolume);
+        int ceilcans10 = (int) Math.ceil(ceillitres10/canvolume);
+        double price = (ceiling*ceilcans + wallcans)*canprice;
+        double price10 = (ceiling*ceilcans10 + wallcans10)*canprice;
 
         //I think gareth said an easy way to get 2 decimal places using floats or something but dont remember
 
@@ -82,12 +131,34 @@ public class Main {
         System.out.println("\nTA-DAH!");
 
         System.out.println("\nTotal area to paint is " + String.format("%.2f", paintingarea) + " metres squared.");
+        if (ceiling == 1) {
+            System.out.println("Wall area to paint is " + String.format("%.2f", wallpaintarea) + " metres squared.");
+            System.out.println("Ceiling area to paint is " + String.format("%.2f", ceilingarea) + " metres squared.");
+        }
         System.out.println("\nPaint needed is " + String.format("%.2f", litres) + " litres.");
-        System.out.println("Number of cans needed is " + cans + ".");
-        System.out.println("Price is £" + String.format("%.2f", price) + ".");
-        System.out.println("\nPaint needed with 10% extra paint is " + String.format("%.2f", litres10) + " litres.");
-        System.out.println("Number of cans needed with 10% extra paint " + cans10 + ".");
-        System.out.println("Price is £" + String.format("%.2f", price10) + ".");
+        if (ceiling == 1) {
+            System.out.println("Paint needed for the walls is " + String.format("%.2f", walllitres) + " litres of " + colours[wallchoice] + " paint.");
+            System.out.println("Paint needed for the ceiling is " + String.format("%.2f", ceillitres) + " litres of " + colours[ceilchoice] + " paint.");
+        }
+        if (ceiling == 0) {
+            System.out.println("Number of cans needed is " + cans + ".");
+        } else {
+            System.out.println("Number of cans needed for the walls is " + wallcans + ".");
+            System.out.println("Number of cans needed for the ceiling is " + ceilcans + ".");
+        }
+        System.out.println("\nPaint needed with 10% extra is " + String.format("%.2f", litres10) + " litres.");
+        if (ceiling == 1) {
+            System.out.println("Paint needed for the walls with 10% extra is " + String.format("%.2f", walllitres10) + " litres of " + colours[wallchoice] + " paint.");
+            System.out.println("Paint needed for the ceiling with 10% extra is " + String.format("%.2f", ceillitres10) + " litres of " + colours[ceilchoice] + " paint.");
+        }
+
+        if (ceiling == 0) {
+            System.out.println("\nNumber of cans needed with 10% extra paint is " + cans10 + ".");
+        }else {
+            System.out.println("Number of cans needed for the walls with 10% extra paint is " + wallcans10 + ".");
+            System.out.println("Number of cans needed for the ceiling with 10% extra paint is " + ceilcans10 + ".");
+        }
+        System.out.println("\nPrice is £" + String.format("%.2f", price) + ".");
 
         System.out.print("\nWould you use this service again? (1 for yes, 0 for no): ");
         int reuse = roomstuff.nextInt();
