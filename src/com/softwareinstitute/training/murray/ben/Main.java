@@ -57,9 +57,9 @@ public class Main {
             Main.main(args);
         }
 
-        int sure = 0;
+        int sure;
         int ceilchoice = 0;
-        int wallchoice = 0;
+        int wallchoice;
         String[] colours = {"white", "red", "blue", "green"};
         do {
             for (int i = 0; i < colours.length; i++) {
@@ -190,7 +190,6 @@ public class Main {
         System.out.println(reply2);
 
         List<String> techClass3 = new ArrayList<>(); //can change ArrayList to LinkedList and it just works
-
         System.out.print("\nWould you like to suggest other colours of paint? (1 for yes, 0 for no): ");
         int suggest = roomstuff.nextInt();
         if (suggest == 1) {
@@ -207,8 +206,7 @@ public class Main {
             }
             System.out.println("\nThank you for the feedback!");
         }
-
-
+        
         System.out.println("\nEND");
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
 
