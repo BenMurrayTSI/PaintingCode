@@ -230,6 +230,9 @@ public class Main {
         litre coverage     10
         can price          10.99
         coats              2
+        colour 1           purple
+        colour 2           brown
+        colour 3           lilac
 
         woohoo
          */
