@@ -1,5 +1,7 @@
 package com.softwareinstitute.training.murray.ben;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;  // Import the Scanner class
 
 public class Main {
@@ -186,6 +188,26 @@ public class Main {
             default -> "Error: You didn't enter a number from 1 to 5. Assuming you meant 5 (Awesome).";
         };
         System.out.println(reply2);
+
+        List<String> techClass3 = new ArrayList<>(); //can change ArrayList to LinkedList and it just works
+
+        System.out.print("\nWould you like to suggest other colours of paint? (1 for yes, 0 for no): ");
+        int suggest = roomstuff.nextInt();
+        if (suggest == 1) {
+
+            System.out.print("\nPlease suggest 3 colours.\n");
+            for (int i = 0; i < 3; i++) {
+                System.out.print("Colour number " + (i+1) + ": ");
+                String newpaint = roomstuff.next();
+                techClass3.add(i, newpaint);
+            }
+            System.out.print("\nYou suggested the colours:\n");
+            for (String letter:techClass3) {
+                System.out.println(letter);
+            }
+            System.out.println("\nThank you for the feedback!");
+        }
+
 
         System.out.println("\nEND");
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
